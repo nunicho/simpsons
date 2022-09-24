@@ -6,7 +6,7 @@ import TarjetaHomero from './Components/TarjetaHomero';
 
 const App = () => {
   return (
-   <Container className="my-5">
+   <Container className=" py-5 fondoPrincipal">
   <LogoSimpsons></LogoSimpsons>
   <TarjetaHomero></TarjetaHomero>
   </Container>
