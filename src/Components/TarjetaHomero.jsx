@@ -1,16 +1,31 @@
 import React from 'react';
-import imageHomero from '../img/imageHomero.png'
+import { Fragment } from 'react';
+// import imageHomero from '../img/imageHomero.png'
+import {Card, Row, Col, } from 'react-bootstrap'
 
-const TarjetaHomero = () => {
+
+const TarjetaHomero = ({personaje}) => {
+
     return (
-        <div className="container row rounded mx-1
-         my-5 bg-light p-3">
-           <img src={imageHomero} className="img-fluid col-4" alt="imageHomero" /> 
-           <div className="col-8"> 
-           <p className="fw-bold"> Homer Simpson</p>
-           <p className="fs-6">Facts are meaningless. You could use facts to prove anything that's even remotely true</p>
-           </div>
-        </div>
+      <Fragment>
+                   <div className="text-center my-3 ">
+            <Button className="botonFrase" onClick={consultarAPI}> Obtener Frase</Button>
+            </div>
+        <Card>
+          <Row>
+          <Col  sm="12" md="4">
+          <img src={personaje.image} className="img-fluid col-4" alt={personaje.character} /> 
+          </Col>
+          <Col sm="12" mmd="8">
+          <Card.Title>
+            <h3>{personaje.character}</h3>
+            </Card.Title>
+               <p className="fs-6 fw-bold" personaje={personaje} >Facts are meaningless. You could use facts to prove anything that's even remotely true</p>
+             </Col>
+          </Row>
+        </Card>
+</Fragment>
+
     );
 };
 
