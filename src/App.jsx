@@ -1,11 +1,14 @@
 import React from 'react';
 import './index.css'
+
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Container} from 'react-bootstrap';
+import './style.css'
+import {Container,} from 'react-bootstrap';
 import Frase from './Components/Frase';
 import Character from  './Components/Character'
 import { useEffect, useState } from 'react';
 import imageSimpsons from './img/imageSimpsons.png'
+import Spinner from './Components/Spinner';
 
 
 
@@ -19,11 +22,13 @@ consultarAPI();
 
 const consultarAPI = async() =>{
 try {
+  // mostrar el spinner
 const respuesta = await fetch ('https://thesimpsonsquoteapi.glitch.me/quotes')
 console.log(respuesta);
 const dato = await respuesta.json();
 console.log(dato[0]);
 setPersonaje(dato[0]);
+//mostrar componente  frase
 }catch (error){
   console.log(error)
   //se recomienda agregar un mensaje al usuario 
@@ -47,6 +52,7 @@ setPersonaje(dato[0]);
            <div className="col-12 col-md-6 col-lg-6"> 
            <p className="fw-bold">{personaje.character}</p>
            <Frase personaje={personaje}></Frase>
+           <Spinner></Spinner>
            </div>
         </div>
         </section>
