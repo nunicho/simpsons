@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Frase = () => {
+const Frase = ({personaje}) => {
     return (
-           <p className="fs-6">Facts are meaningless. You could use facts to prove anything that's even remotely true</p>
+           <p className="fs-6">{personaje.quote}</p>
     );
 };
 
