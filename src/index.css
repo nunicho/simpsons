@@ -2,8 +2,22 @@
 .fondoPrincipal{
 background-color: #90b0e7;
 
+
 }
 
 .botonFrase{
+    transition: 99ms;
+     padding: 7px;
     background-color:  orange;
+    border-radius: 4px;
+    border: none;
 }
+
+.botonFrase:hover{
+    transition: 99ms;
+    padding: 7px;
+    background-color:  yellow;
+    border-radius: 4px;
+    border: none;
+}
+
